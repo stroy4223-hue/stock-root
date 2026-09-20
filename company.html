@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>기업분석 | 주식투자 뿌리</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1f2937;
+}
+
+header {
+    background: #123c2f;
+    color: white;
+    padding: 28px 20px;
+}
+
+.header-inner {
+    max-width: 1050px;
+    margin: auto;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.subtitle {
+    margin-top: 8px;
+    opacity: 0.9;
+}
+
+.container {
+    max-width: 1050px;
+    margin: auto;
+    padding: 25px 16px 60px;
+}
+
+.back {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #123c2f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.search {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.search input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 9px;
+    font-size: 16px;
+}
+
+.company-header {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+}
+
+.company-name {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.stock-code {
+    color: #777;
+    margin-top: 5px;
+}
+
+.price {
+    margin-top: 20px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.data-status {
+    color: #888;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+.section {
+    margin-top: 25px;
+}
+
+.section-title {
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.card {
+    background: white;
+    padding: 18px;
+    border-radius: 13px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+}
+
+.card-title {
+    color: #777;
+    font-size: 13px;
+}
+
+.card-value {
+    margin-top: 9px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.business {
+    background: white;
+    padding: 22px;
+    border-radius: 15px;
+    line-height: 1.7;
+}
+
+.table-wrap {
+    overflow-x: auto;
+    background: white;
+    border-radius: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+th {
+    background: #f1f5f3;
+}
+
+.news {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.news-item {
+    padding: 17px;
+    border-bottom: 1px solid #eee;
+}
+
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.notice {
+    margin-top: 25px;
+    padding: 18px;
+    background: #fff8e8;
+    border-radius: 12px;
+    color: #66552b;
+    line-height: 1.6;
+}
+
+footer {
+    background: #123c2f;
+    color: white;
+    text-align: center;
+    padding: 28px;
+    font-size: 13px;
+}
+
+@media (max-width: 700px) {
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .company-name {
+        font-size: 24px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="logo">🌱 주식투자 뿌리</div>
+        <div class="subtitle">기업을 숫자와 사업으로 이해하세요.</div>
+    </div>
+</header>
+
+<main class="container">
+
+<a href="index.html" class="back">← 홈으로 돌아가기</a>
+
+<div class="search">
+    <input type="text" placeholder="분석할 기업을 검색하세요. 예: 삼성전자">
+</div>
+
+<section class="company-header">
+
+    <div class="company-name">삼성전자</div>
+
+    <div class="stock-code">
+        005930 · 대한민국 대표 전자기업
+    </div>
+
+    <div class="price">
+        주가 데이터 준비 중
+    </div>
+
+    <div class="data-status">
+        실제 주가 데이터는 API 연결 후 표시됩니다.
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-title">📊 핵심 투자지표</div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="card-title">시가총액</div>
+            <div class="card-value">준비 중</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">PER</div>
+            <div class="card-value">준비 중</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">PBR</div>
+            <div class="card-value">준비 중</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">ROE</div>
+            <div class="card-value">준비 중</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">EPS</div>
+            <div class="card-value">준비 중</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">BPS</div>
+            <div class="card-value">준비 중</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">배당수익률</div>
+            <div class="card-value">준비 중</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">거래량</div>
+            <div class="card-value">준비 중</div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-title">🏢 기업이 무엇을 하는가?</div>
+
+    <div class="business">
+
+        <strong>사업 내용</strong>
+
+        <p>
+        이곳에는 기업의 주요 사업과 수익구조를 이해하기 쉽게 설명합니다.
+        </p>
+
+        <p>
+        실제 기업 데이터가 연결되면 사업별 매출과 주요 사업 정보를
+        함께 확인할 수 있도록 구성할 예정입니다.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-title">💰 주요 재무정보</div>
+
+    <div class="table-wrap">
+
+        <table>
+
+            <tr>
+                <th>항목</th>
+                <th>최근 연도</th>
+                <th>전년도</th>
+                <th>증감</th>
+            </tr>
+
+            <tr>
+                <td>매출</td>
+                <td>준비 중</td>
+                <td>준비 중</td>
+                <td>준비 중</td>
+            </tr>
+
+            <tr>
+                <td>영업이익</td>
+                <td>준비 중</td>
+                <td>준비 중</td>
+                <td>준비 중</td>
+            </tr>
+
+            <tr>
+                <td>순이익</td>
+                <td>준비 중</td>
+                <td>준비 중</td>
+                <td>준비 중</td>
+            </tr>
+
+            <tr>
+                <td>자산</td>
+                <td>준비 중</td>
+                <td>준비 중</td>
+                <td>준비 중</td>
+            </tr>
+
+            <tr>
+                <td>부채</td>
+                <td>준비 중</td>
+                <td>준비 중</td>
+                <td>준비 중</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-title">💵 배당정보</div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="card-title">주당배당금</div>
+            <div class="card-value">준비 중</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">배당수익률</div>
+            <div class="card-value">준비 중</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">배당 지급일</div>
+            <div class="card-value">준비 중</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">배당성향</div>
+            <div class="card-value">준비 중</div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-title">📰 관련 뉴스</div>
+
+    <div class="news">
+
+        <div class="news-item">
+            기업 관련 뉴스가 연결되면 이곳에 표시됩니다.
+        </div>
+
+        <div class="news-item">
+            뉴스에서 기업분석 화면으로 바로 이동할 수 있도록 구성합니다.
+        </div>
+
+        <div class="news-item">
+            기업 → 뉴스 → 투자공부가 서로 연결됩니다.
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="notice">
+
+<strong>📌 주의</strong><br>
+
+현재 화면은 사이트 구조를 만드는 단계입니다.
+주가와 재무정보는 실제 데이터 연결 전까지 표시하지 않습니다.
+
+</div>
+
+</main>
+
+<footer>
+🌱 주식투자 뿌리<br><br>
+주식을 처음부터 제대로 공부하는 공간
+</footer>
+
+</body>
+</html>
