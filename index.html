@@ -1,218 +1,231 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>주식투자 뿌리</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>주식투자 뿌리</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f7fa;
-      color: #222;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f6fa;
+  color: #172033;
+}
 
-    header {
-      background: #111827;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+header {
+  background: #111827;
+  color: white;
+  padding: 28px 20px;
+  text-align: center;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 26px;
-    }
+header h1 {
+  margin: 0;
+  font-size: 30px;
+}
 
-    header p {
-      margin: 8px 0 0;
-      color: #cbd5e1;
-    }
+header p {
+  margin: 10px 0 0;
+  color: #cbd5e1;
+}
 
-    main {
-      max-width: 1000px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
+main {
+  max-width: 1000px;
+  margin: 25px auto;
+  padding: 0 16px;
+}
 
-    .card {
-      background: white;
-      border-radius: 14px;
-      padding: 22px;
-      margin-bottom: 20px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-    }
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 18px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.07);
+}
 
-    .card h2 {
-      margin-top: 0;
-    }
+.card h2 {
+  margin-top: 0;
+}
 
-    .search-box {
-      display: flex;
-      gap: 10px;
-      margin-top: 15px;
-    }
+.search-box {
+  display: flex;
+  gap: 10px;
+}
 
-    input {
-      flex: 1;
-      padding: 13px;
-      border: 1px solid #d1d5db;
-      border-radius: 8px;
-      font-size: 16px;
-    }
+input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 9px;
+  font-size: 16px;
+}
 
-    button {
-      padding: 13px 20px;
-      border: none;
-      border-radius: 8px;
-      background: #2563eb;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
+button {
+  border: 0;
+  border-radius: 9px;
+  padding: 13px 18px;
+  background: #2563eb;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
 
-    button:hover {
-      background: #1d4ed8;
-    }
+button:hover {
+  opacity: 0.9;
+}
 
-    #result {
-      margin-top: 20px;
-      padding: 15px;
-      background: #f8fafc;
-      border-radius: 8px;
-      min-height: 50px;
-    }
+.stock-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
 
-    .menu {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-    }
+.stock-buttons button {
+  background: #e8eefc;
+  color: #1d4ed8;
+}
 
-    .menu-item {
-      padding: 20px;
-      background: #f8fafc;
-      border-radius: 10px;
-      border: 1px solid #e5e7eb;
-    }
+.result {
+  margin-top: 18px;
+  padding: 18px;
+  background: #f8fafc;
+  border-radius: 10px;
+  line-height: 1.7;
+}
 
-    .menu-item h3 {
-      margin-top: 0;
-    }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+}
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #6b7280;
-    }
-  </style>
+.menu {
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.menu h3 {
+  margin-top: 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 20px;
+  background: #e5e7eb;
+  font-size: 12px;
+}
+
+.notice {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  padding: 15px;
+  line-height: 1.7;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  color: #6b7280;
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 25px;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>주식투자 뿌리</h1>
-    <p>주식투자의 기본부터 차근차근</p>
-  </header>
+<header>
+  <h1>🌱 주식투자 뿌리</h1>
+  <p>주식투자를 처음부터 제대로 배우는 곳</p>
+</header>
 
-  <main>
+<main>
 
-    <div class="card">
-      <h2>🔎 종목 검색</h2>
+  <div class="card">
+    <h2>🔎 종목 검색</h2>
 
-      <div class="search-box">
-        <input
-          type="text"
-          id="stockInput"
-          placeholder="종목명을 입력하세요"
-        >
+    <div class="search-box">
+      <input
+        id="stockInput"
+        type="text"
+        placeholder="예: 삼성전자"
+      >
 
-        <button onclick="searchStock()">
-          검색
-        </button>
-      </div>
-
-      <div id="result">
-        검색할 종목을 입력해주세요.
-      </div>
+      <button onclick="searchStock()">검색</button>
     </div>
 
-    <div class="card">
-      <h2>📚 주식투자 공부</h2>
+    <div class="stock-buttons">
+      <button onclick="quickSearch('삼성전자')">삼성전자</button>
+      <button onclick="quickSearch('SK하이닉스')">SK하이닉스</button>
+      <button onclick="quickSearch('현대차')">현대차</button>
+      <button onclick="quickSearch('NAVER')">NAVER</button>
+      <button onclick="quickSearch('카카오')">카카오</button>
+    </div>
+
+    <div id="result" class="result">
+      종목을 검색하면 이곳에 기업 분석 화면이 표시됩니다.
+    </div>
+  </div>
+
+
+  <div class="card">
+    <h2>📊 기업 분석</h2>
+
+    <div class="grid">
 
       <div class="menu">
-
-        <div class="menu-item">
-          <h3>1️⃣ 주식이란?</h3>
-          <p>
-            주식의 기본 개념과 주식시장이 어떻게 움직이는지 알아봅니다.
-          </p>
-        </div>
-
-        <div class="menu-item">
-          <h3>2️⃣ 수요와 공급</h3>
-          <p>
-            주가가 왜 오르고 내리는지 가장 기본적인 원리를 알아봅니다.
-          </p>
-        </div>
-
-        <div class="menu-item">
-          <h3>3️⃣ 기업 분석</h3>
-          <p>
-            매출, 영업이익, 순이익 등 기업의 기본적인 재무정보를 공부합니다.
-          </p>
-        </div>
-
-        <div class="menu-item">
-          <h3>4️⃣ 투자 원칙</h3>
-          <p>
-            장기투자, 분산투자, 위험관리 등 기본적인 투자 원칙을 알아봅니다.
-          </p>
-        </div>
-
+        <span class="badge">기초</span>
+        <h3>매출</h3>
+        <p>기업이 제품과 서비스를 판매해서 벌어들인 전체 매출을 확인합니다.</p>
       </div>
-    </div>
 
-    <div class="card">
-      <h2>🌱 주식투자 뿌리의 목표</h2>
+      <div class="menu">
+        <span class="badge">기초</span>
+        <h3>영업이익</h3>
+        <p>기업의 본업에서 실제로 얼마나 이익을 냈는지 확인합니다.</p>
+      </div>
 
-      <p>
-        단순히 종목을 추천하는 것이 아니라,
-        스스로 기업과 주식시장을 이해할 수 있는 기초를 만드는 것을 목표로 합니다.
-      </p>
-    </div>
+      <div class="menu">
+        <span class="badge">지표</span>
+        <h3>PER</h3>
+        <p>주가가 기업의 이익에 비해 어느 정도 수준인지 살펴보는 지표입니다.</p>
+      </div>
 
-  </main>
+      <div class="menu">
+        <span class="badge">지표</span>
+        <h3>PBR</h3>
+        <p>주가가 기업의 순자산에 비해 어느 정도인지 살펴봅니다.</p>
+      </div>
 
-  <footer>
-    주식투자 뿌리 © 2026
-  </footer>
+      <div class="menu">
+        <span class="badge">수익성</span>
+        <h3>ROE</h3>
+        <p>기업이 자기자본을 이용해 얼마나 효율적으로 이익을 내는지 살펴봅니다.</p>
+      </div>
 
-  <script>
-    function searchStock() {
-      const input = document.getElementById("stockInput");
-      const result = document.getElementById("result");
-
-      const stockName = input.value.trim();
-
-      if (stockName === "") {
-        result.innerHTML = "종목명을 입력해주세요.";
-        return;
-      }
-
-      result.innerHTML =
-        "<strong>" +
-        stockName +
-        "</strong> 종목을 검색했습니다.<br><br>" +
-        "현재는 기본 화면만 구현되어 있습니다.<br>" +
-        "다음 단계에서 실제 주식 데이터를 연결할 예정입니다.";
-    }
-  </script>
-
-</body>
-</html>
+      <div class="menu">
+        <span class="badge">배당</span>
+        <h3>배당수익률</h3>
+        <p>주가에 비해 배당금이 어느 정도인지 확인하는 데 사용하는 지
