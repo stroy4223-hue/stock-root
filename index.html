@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>주식투자 뿌리</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #222;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    header p {
+      margin: 8px 0 0;
+      color: #cbd5e1;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 22px;
+      margin-bottom: 20px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .card h2 {
+      margin-top: 0;
+    }
+
+    .search-box {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    input {
+      flex: 1;
+      padding: 13px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 13px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #2563eb;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    #result {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f8fafc;
+      border-radius: 8px;
+      min-height: 50px;
+    }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .menu-item {
+      padding: 20px;
+      background: #f8fafc;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .menu-item h3 {
+      margin-top: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #6b7280;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>주식투자 뿌리</h1>
+    <p>주식투자의 기본부터 차근차근</p>
+  </header>
+
+  <main>
+
+    <div class="card">
+      <h2>🔎 종목 검색</h2>
+
+      <div class="search-box">
+        <input
+          type="text"
+          id="stockInput"
+          placeholder="종목명을 입력하세요"
+        >
+
+        <button onclick="searchStock()">
+          검색
+        </button>
+      </div>
+
+      <div id="result">
+        검색할 종목을 입력해주세요.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📚 주식투자 공부</h2>
+
+      <div class="menu">
+
+        <div class="menu-item">
+          <h3>1️⃣ 주식이란?</h3>
+          <p>
+            주식의 기본 개념과 주식시장이 어떻게 움직이는지 알아봅니다.
+          </p>
+        </div>
+
+        <div class="menu-item">
+          <h3>2️⃣ 수요와 공급</h3>
+          <p>
+            주가가 왜 오르고 내리는지 가장 기본적인 원리를 알아봅니다.
+          </p>
+        </div>
+
+        <div class="menu-item">
+          <h3>3️⃣ 기업 분석</h3>
+          <p>
+            매출, 영업이익, 순이익 등 기업의 기본적인 재무정보를 공부합니다.
+          </p>
+        </div>
+
+        <div class="menu-item">
+          <h3>4️⃣ 투자 원칙</h3>
+          <p>
+            장기투자, 분산투자, 위험관리 등 기본적인 투자 원칙을 알아봅니다.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🌱 주식투자 뿌리의 목표</h2>
+
+      <p>
+        단순히 종목을 추천하는 것이 아니라,
+        스스로 기업과 주식시장을 이해할 수 있는 기초를 만드는 것을 목표로 합니다.
+      </p>
+    </div>
+
+  </main>
+
+  <footer>
+    주식투자 뿌리 © 2026
+  </footer>
+
+  <script>
+    function searchStock() {
+      const input = document.getElementById("stockInput");
+      const result = document.getElementById("result");
+
+      const stockName = input.value.trim();
+
+      if (stockName === "") {
+        result.innerHTML = "종목명을 입력해주세요.";
+        return;
+      }
+
+      result.innerHTML =
+        "<strong>" +
+        stockName +
+        "</strong> 종목을 검색했습니다.<br><br>" +
+        "현재는 기본 화면만 구현되어 있습니다.<br>" +
+        "다음 단계에서 실제 주식 데이터를 연결할 예정입니다.";
+    }
+  </script>
+
+</body>
+</html>
