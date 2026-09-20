@@ -7,149 +7,261 @@
 
 <style>
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f3f6fa;
-  color: #172033;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1f2937;
 }
 
 header {
-  background: #111827;
-  color: white;
-  padding: 28px 20px;
-  text-align: center;
+    background: #123c2f;
+    color: white;
+    padding: 28px 20px;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 30px;
+.header-inner {
+    max-width: 1100px;
+    margin: auto;
 }
 
-header p {
-  margin: 10px 0 0;
-  color: #cbd5e1;
+.logo {
+    font-size: 28px;
+    font-weight: bold;
 }
 
-main {
-  max-width: 1000px;
-  margin: 25px auto;
-  padding: 0 16px;
+.subtitle {
+    margin-top: 8px;
+    opacity: 0.9;
 }
 
-.card {
-  background: white;
-  border-radius: 16px;
-  padding: 22px;
-  margin-bottom: 18px;
-  box-shadow: 0 3px 15px rgba(0,0,0,0.07);
+nav {
+    background: white;
+    border-bottom: 1px solid #ddd;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
-.card h2 {
-  margin-top: 0;
+nav .nav-inner {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+}
+
+nav a {
+    padding: 16px 14px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+nav a:hover {
+    background: #f1f5f3;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 24px 16px 60px;
 }
 
 .search-box {
-  display: flex;
-  gap: 10px;
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    margin-bottom: 24px;
 }
 
-input {
-  flex: 1;
-  min-width: 0;
-  padding: 14px;
-  border: 1px solid #d1d5db;
-  border-radius: 9px;
-  font-size: 16px;
+.search-box h2 {
+    margin-top: 0;
 }
 
-button {
-  border: 0;
-  border-radius: 9px;
-  padding: 13px 18px;
-  background: #2563eb;
-  color: white;
-  font-size: 15px;
-  cursor: pointer;
+.search {
+    display: flex;
+    gap: 10px;
 }
 
-button:hover {
-  opacity: 0.9;
+.search input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
 }
 
-.stock-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 15px;
+.search button {
+    border: none;
+    background: #123c2f;
+    color: white;
+    padding: 0 22px;
+    border-radius: 10px;
+    font-size: 15px;
 }
 
-.stock-buttons button {
-  background: #e8eefc;
-  color: #1d4ed8;
+.quick-search {
+    margin-top: 14px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
-.result {
-  margin-top: 18px;
-  padding: 18px;
-  background: #f8fafc;
-  border-radius: 10px;
-  line-height: 1.7;
+.quick-search button {
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 8px 12px;
+    border-radius: 20px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 14px;
+.section {
+    margin-top: 30px;
 }
 
-.menu {
-  padding: 20px;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  background: #f8fafc;
+.section-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 14px;
 }
 
-.menu h3 {
-  margin-top: 0;
+.section-description {
+    color: #666;
+    margin-bottom: 18px;
 }
 
-.badge {
-  display: inline-block;
-  padding: 5px 9px;
-  border-radius: 20px;
-  background: #e5e7eb;
-  font-size: 12px;
+.study-box {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
 }
 
-.notice {
-  background: #eff6ff;
-  border-left: 4px solid #2563eb;
-  padding: 15px;
-  line-height: 1.7;
+.weeks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.week {
+    padding: 20px;
+    border-radius: 12px;
+    background: #f1f5f3;
+}
+
+.week strong {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.stock-price {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.news-list {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+}
+
+.news-item {
+    padding: 18px;
+    border-bottom: 1px solid #eee;
+}
+
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.book {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+}
+
+.book-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 9px 14px;
+    background: #123c2f;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.watchlist {
+    background: #fff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
 }
 
 footer {
-  text-align: center;
-  padding: 30px 15px;
-  color: #6b7280;
+    margin-top: 40px;
+    background: #123c2f;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+    font-size: 13px;
 }
 
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 25px;
-  }
+@media (max-width: 700px) {
 
-  .search-box {
-    flex-direction: column;
-  }
+    .logo {
+        font-size: 24px;
+    }
 
-  button {
-    width: 100%;
-  }
+    .search {
+        flex-direction: column;
+    }
+
+    .search button {
+        padding: 13px;
+    }
+
+    .weeks {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .book-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav a {
+        padding: 14px 10px;
+    }
 }
 </style>
 </head>
@@ -157,75 +269,205 @@ footer {
 <body>
 
 <header>
-  <h1>🌱 주식투자 뿌리</h1>
-  <p>주식투자를 처음부터 제대로 배우는 곳</p>
+    <div class="header-inner">
+        <div class="logo">🌱 주식투자 뿌리</div>
+        <div class="subtitle">주식, 처음부터 제대로 공부하세요.</div>
+    </div>
 </header>
 
-<main>
-
-  <div class="card">
-    <h2>🔎 종목 검색</h2>
-
-    <div class="search-box">
-      <input
-        id="stockInput"
-        type="text"
-        placeholder="예: 삼성전자"
-      >
-
-      <button onclick="searchStock()">검색</button>
+<nav>
+    <div class="nav-inner">
+        <a href="#">🏠 홈</a>
+        <a href="#">🔎 종목검색</a>
+        <a href="#">📊 기업분석</a>
+        <a href="#">⚖️ 기업비교</a>
+        <a href="#">💰 배당</a>
+        <a href="#">📰 뉴스</a>
+        <a href="#">📚 주식공부</a>
+        <a href="#">⭐ 관심종목</a>
     </div>
+</nav>
 
-    <div class="stock-buttons">
-      <button onclick="quickSearch('삼성전자')">삼성전자</button>
-      <button onclick="quickSearch('SK하이닉스')">SK하이닉스</button>
-      <button onclick="quickSearch('현대차')">현대차</button>
-      <button onclick="quickSearch('NAVER')">NAVER</button>
-      <button onclick="quickSearch('카카오')">카카오</button>
-    </div>
+<main class="container">
 
-    <div id="result" class="result">
-      종목을 검색하면 이곳에 기업 분석 화면이 표시됩니다.
-    </div>
-  </div>
+    <section class="search-box">
+        <h2>🔎 어떤 기업이 궁금하세요?</h2>
 
+        <div class="search">
+            <input type="text" placeholder="삼성전자, SK하이닉스, 현대차...">
+            <button>검색</button>
+        </div>
 
-  <div class="card">
-    <h2>📊 기업 분석</h2>
+        <div class="quick-search">
+            <button>삼성전자</button>
+            <button>SK하이닉스</button>
+            <button>현대차</button>
+            <button>NAVER</button>
+            <button>카카오</button>
+        </div>
+    </section>
 
-    <div class="grid">
+    <section class="section">
+        <div class="section-title">📚 4주 주식투자 공부</div>
+        <div class="section-description">
+            주식을 처음 시작한다면 여기부터 시작하세요.
+        </div>
 
-      <div class="menu">
-        <span class="badge">기초</span>
-        <h3>매출</h3>
-        <p>기업이 제품과 서비스를 판매해서 벌어들인 전체 매출을 확인합니다.</p>
-      </div>
+        <div class="study-box">
+            <div class="weeks">
 
-      <div class="menu">
-        <span class="badge">기초</span>
-        <h3>영업이익</h3>
-        <p>기업의 본업에서 실제로 얼마나 이익을 냈는지 확인합니다.</p>
-      </div>
+                <div class="week">
+                    <strong>1주차</strong>
+                    주식의 뿌리
+                </div>
 
-      <div class="menu">
-        <span class="badge">지표</span>
-        <h3>PER</h3>
-        <p>주가가 기업의 이익에 비해 어느 정도 수준인지 살펴보는 지표입니다.</p>
-      </div>
+                <div class="week">
+                    <strong>2주차</strong>
+                    기업을 보는 법
+                </div>
 
-      <div class="menu">
-        <span class="badge">지표</span>
-        <h3>PBR</h3>
-        <p>주가가 기업의 순자산에 비해 어느 정도인지 살펴봅니다.</p>
-      </div>
+                <div class="week">
+                    <strong>3주차</strong>
+                    투자지표 이해하기
+                </div>
 
-      <div class="menu">
-        <span class="badge">수익성</span>
-        <h3>ROE</h3>
-        <p>기업이 자기자본을 이용해 얼마나 효율적으로 이익을 내는지 살펴봅니다.</p>
-      </div>
+                <div class="week">
+                    <strong>4주차</strong>
+                    실제 기업 분석
+                </div>
 
-      <div class="menu">
-        <span class="badge">배당</span>
-        <h3>배당수익률</h3>
-        <p>주가에 비해 배당금이 어느 정도인지 확인하는 데 사용하는 지
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-title">📊 주요 종목</div>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>삼성전자</h3>
+                <div>005930</div>
+                <div class="stock-price">데이터 준비 중</div>
+            </div>
+
+            <div class="card">
+                <h3>SK하이닉스</h3>
+                <div>000660</div>
+                <div class="stock-price">데이터 준비 중</div>
+            </div>
+
+            <div class="card">
+                <h3>현대차</h3>
+                <div>005380</div>
+                <div class="stock-price">데이터 준비 중</div>
+            </div>
+
+            <div class="card">
+                <h3>NAVER</h3>
+                <div>035420</div>
+                <div class="stock-price">데이터 준비 중</div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-title">📊 기업을 제대로 알아보기</div>
+        <div class="section-description">
+            주가만 보지 말고 기업의 사업과 재무를 함께 살펴보세요.
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>삼성전자</h3>
+                <p>사업·실적·재무·투자지표</p>
+            </div>
+
+            <div class="card">
+                <h3>SK하이닉스</h3>
+                <p>사업·실적·재무·투자지표</p>
+            </div>
+
+            <div class="card">
+                <h3>현대차</h3>
+                <p>사업·실적·재무·투자지표</p>
+            </div>
+
+            <div class="card">
+                <h3>NAVER</h3>
+                <p>사업·실적·재무·투자지표</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-title">📰 오늘의 주식뉴스</div>
+
+        <div class="news-list">
+
+            <div class="news-item">
+                주요 주식뉴스를 준비하고 있습니다.
+            </div>
+
+            <div class="news-item">
+                기업별 관련 뉴스도 연결할 예정입니다.
+            </div>
+
+            <div class="news-item">
+                뉴스 → 기업분석 → 공부 콘텐츠로 연결합니다.
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-title">📖 이번 주 추천도서</div>
+        <div class="section-description">
+            공부한 내용을 더 깊게 이해하고 싶다면 관련 도서를 확인해보세요.
+        </div>
+
+        <div class="book-grid">
+
+            <div class="book">
+                <h3>주식 기초 입문서</h3>
+                <p>주식시장과 투자 기본기를 이해하기 위한 책</p>
+                <a href="#" class="book-button">책 정보 보기</a>
+            </div>
+
+            <div class="book">
+                <h3>기업 분석 입문서</h3>
+                <p>기업의 실적과 재무제표를 이해하기 위한 책</p>
+                <a href="#" class="book-button">책 정보 보기</a>
+            </div>
+
+            <div class="book">
+                <h3>투자지표 공부</h3>
+                <p>PER, PBR, ROE 등 주요 지표를 공부하기 위한 책</p>
+                <a href="#" class="book-button">책 정보 보기</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section">
+
+        <div class="section-title">⭐ 관심종목</div>
+
+        <div class="watchlist">
+            자주 보는 기업을 등록하고 나중에 한곳에서 확인할 수 있도록 만들 예정입니다.
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    🌱 주식투자 뿌리<br><br>
+    주식을 처음부터 제대로 공부하는 공간
+</footer>
+
+</body>
+</html>
