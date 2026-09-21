@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>배당 | 주식투자 뿌리</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  color: #222;
+}
+
+header {
+  background: #17202a;
+  color: white;
+  padding: 24px 20px;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.subtitle {
+  margin-top: 7px;
+  color: #cfd6dd;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.section {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+}
+
+.section h2 {
+  margin-top: 0;
+}
+
+.intro {
+  line-height: 1.7;
+  color: #555;
+}
+
+.search-box {
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.card {
+  background: #f5f7fa;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.card-title {
+  color: #777;
+  font-size: 14px;
+}
+
+.card-value {
+  margin-top: 8px;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 14px 10px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+th {
+  background: #f5f7fa;
+}
+
+td:first-child,
+th:first-child {
+  text-align: left;
+}
+
+.pending {
+  color: #888;
+}
+
+.calculator {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ddd;
+  border-radius: 9px;
+  font-size: 16px;
+}
+
+.result {
+  margin-top: 20px;
+  padding: 18px;
+  background: #f5f7fa;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.notice {
+  background: #fff8e1;
+  padding: 16px;
+  border-radius: 10px;
+  color: #795600;
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #888;
+}
+
+@media (max-width: 700px) {
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .calculator {
+    grid-template-columns: 1fr;
+  }
+
+  th,
+  td {
+    font-size: 14px;
+    padding: 12px 7px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">🌱 주식투자 뿌리</div>
+    <div class="subtitle">배당을 쉽게 이해하고 기업별로 비교하세요.</div>
+  </div>
+</header>
+
+<div class="container">
+
+  <a class="back" href="index.html">
+    ← 홈으로 돌아가기
+  </a>
+
+  <div class="section">
+
+    <h2>💰 배당이란?</h2>
+
+    <div class="intro">
+      기업이 사업을 통해 벌어들인 이익의 일부를
+      주주에게 돌려주는 것이 배당입니다.
+      <br><br>
+      배당을 볼 때는 단순히 배당금만 보는 것이 아니라
+      배당수익률, 배당성향, 기업의 이익과 현금흐름 등을
+      함께 확인하는 것이 중요합니다.
+    </div>
+
+  </div>
+
+
+  <div class="section">
+
+    <h2>🔎 배당주 검색</h2>
+
+    <div class="search-box">
+
+      <input
+        type="text"
+        placeholder="기업명 또는 종목코드를 검색하세요"
+      >
+
+    </div>
+
+  </div>
+
+
+  <div class="section">
+
+    <h2>📊 주요 배당지표</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-title">주당배당금(DPS)</div>
+        <div class="card-value">준비 중</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">배당수익률</div>
+        <div class="card-value">준비 중</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">배당성향</div>
+        <div class="card-value">준비 중</div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="section">
+
+    <h2>🏢 주요 기업 배당 비교</h2>
+
+    <table>
+
+      <tr>
+        <th>기업</th>
+        <th>주당배당금</th>
+        <th>배당수익률</th>
+        <th>배당성향</th>
+      </tr>
+
+      <tr>
+        <td>삼성전자</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+      </tr>
+
+      <tr>
+        <td>SK하이닉스</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+      </tr>
+
+      <tr>
+        <td>현대차</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+      </tr>
+
+      <tr>
+        <td>NAVER</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+      </tr>
+
+    </table>
+
+  </div>
+
+
+  <div class="section">
+
+    <h2>📅 배당 일정</h2>
+
+    <table>
+
+      <tr>
+        <th>기업</th>
+        <th>배당 기준일</th>
+        <th>배당 지급일</th>
+        <th>상태</th>
+      </tr>
+
+      <tr>
+        <td>삼성전자</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+      </tr>
+
+      <tr>
+        <td>SK하이닉스</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+      </tr>
+
+    </table>
+
+  </div>
+
+
+  <div class="section">
+
+    <h2>🧮 예상 배당금 계산</h2>
+
+    <div class="calculator">
+
+      <div class="input-group">
+
+        <label>보유 주식 수</label>
+
+        <input
+          type="number"
+          placeholder="예: 100"
+        >
+
+      </div>
+
+      <div class="input-group">
+
+        <label>주당 배당금</label>
+
+        <input
+          type="number"
+          placeholder="예: 1000"
+        >
+
+      </div>
+
+    </div>
+
+    <div class="result">
+      예상 배당금: 계산 기능 준비 중
+    </div>
+
+  </div>
+
+
+  <div class="section">
+
+    <h2>📚 배당 공부</h2>
+
+    <div class="intro">
+
+      <p>
+        <strong>배당수익률</strong>은 현재 주가 대비
+        배당금이 어느 정도인지를 나타내는 지표입니다.
+      </p>
+
+      <p>
+        <strong>배당성향</strong>은 기업이 벌어들인 순이익 중
+        얼마를 배당으로 지급하는지를 보여줍니다.
+      </p>
+
+      <p>
+        높은 배당수익률만 보고 투자하기보다는
+        기업의 이익과 현금흐름, 배당의 지속 가능성을
+        함께 확인해야 합니다.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="notice">
+
+    ⚠️ 현재는 배당 화면의 기본 구조입니다.<br>
+    실제 배당금·배당수익률·배당일 등의 데이터는
+    한국투자증권 Open API 및 필요한 데이터 연결 후 표시됩니다.
+
+  </div>
+
+</div>
+
+<footer>
+  🌱 주식투자 뿌리
+</footer>
+
+</body>
+</html>
