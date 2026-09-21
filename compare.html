@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>기업비교 | 주식투자 뿌리</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  color: #222;
+}
+
+header {
+  background: #17202a;
+  color: white;
+  padding: 24px 20px;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.subtitle {
+  margin-top: 7px;
+  color: #cfd6dd;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.compare-select {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.company-box {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+}
+
+.company-box h2 {
+  margin-top: 0;
+}
+
+.company-box input {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ddd;
+  border-radius: 9px;
+  font-size: 16px;
+}
+
+.company-name {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.company-code {
+  color: #777;
+  margin-top: 5px;
+}
+
+.section {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+}
+
+.section h2 {
+  margin-top: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+th {
+  background: #f5f7fa;
+}
+
+td:first-child,
+th:first-child {
+  text-align: left;
+}
+
+.pending {
+  color: #888;
+}
+
+.explain {
+  line-height: 1.7;
+  color: #555;
+}
+
+.notice {
+  background: #fff8e1;
+  padding: 16px;
+  border-radius: 10px;
+  color: #795600;
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #888;
+}
+
+@media (max-width: 700px) {
+
+  .compare-select {
+    grid-template-columns: 1fr;
+  }
+
+  th,
+  td {
+    padding: 12px 7px;
+    font-size: 14px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">🌱 주식투자 뿌리</div>
+    <div class="subtitle">두 기업을 숫자로 비교해보세요.</div>
+  </div>
+</header>
+
+<div class="container">
+
+  <a class="back" href="index.html">
+    ← 홈으로 돌아가기
+  </a>
+
+  <div class="compare-select">
+
+    <div class="company-box">
+
+      <h2>기업 ①</h2>
+
+      <input
+        type="text"
+        placeholder="기업명 또는 종목코드"
+        value="삼성전자"
+      >
+
+      <div class="company-name">
+        삼성전자
+      </div>
+
+      <div class="company-code">
+        005930
+      </div>
+
+    </div>
+
+    <div class="company-box">
+
+      <h2>기업 ②</h2>
+
+      <input
+        type="text"
+        placeholder="기업명 또는 종목코드"
+        value="SK하이닉스"
+      >
+
+      <div class="company-name">
+        SK하이닉스
+      </div>
+
+      <div class="company-code">
+        000660
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="section">
+
+    <h2>📊 핵심 투자지표 비교</h2>
+
+    <table>
+
+      <tr>
+        <th>항목</th>
+        <th>삼성전자</th>
+        <th>SK하이닉스</th>
+      </tr>
+
+      <tr>
+        <td>현재 주가</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+      </tr>
+
+      <tr>
+        <td>시가총액</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+      </tr>
+
+      <tr>
+        <td>PER</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+      </tr>
+
+      <tr>
+        <td>PBR</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+      </tr>
+
+      <tr>
+        <td>ROE</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+      </tr>
+
+      <tr>
+        <td>EPS</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+      </tr>
+
+      <tr>
+        <td>BPS</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+      </tr>
+
+      <tr>
+        <td>배당수익률</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+      </tr>
+
+    </table>
+
+  </div>
+
+
+  <div class="section">
+
+    <h2>💰 재무정보 비교</h2>
+
+    <table>
+
+      <tr>
+        <th>항목</th>
+        <th>삼성전자</th>
+        <th>SK하이닉스</th>
+      </tr>
+
+      <tr>
+        <td>매출액</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+      </tr>
+
+      <tr>
+        <td>영업이익</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+      </tr>
+
+      <tr>
+        <td>순이익</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+      </tr>
+
+      <tr>
+        <td>자산</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+      </tr>
+
+      <tr>
+        <td>부채</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+      </tr>
+
+    </table>
+
+  </div>
+
+
+  <div class="section">
+
+    <h2>🏢 기업 정보 비교</h2>
+
+    <div class="explain">
+
+      <p>
+        두 기업의 주요 사업, 제품, 산업 분야, 경쟁 관계 등을
+        비교할 수 있는 공간입니다.
+      </p>
+
+      <p>
+        실제 기업 데이터가 연결되면 기업별 사업 구조와
+        주요 사업 비중 등을 표시할 예정입니다.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="section">
+
+    <h2>💵 배당 비교</h2>
+
+    <table>
+
+      <tr>
+        <th>항목</th>
+        <th>삼성전자</th>
+        <th>SK하이닉스</th>
+      </tr>
+
+      <tr>
+        <td>주당배당금</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+      </tr>
+
+      <tr>
+        <td>배당수익률</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+      </tr>
+
+      <tr>
+        <td>배당성향</td>
+        <td class="pending">준비 중</td>
+        <td class="pending">준비 중</td>
+      </tr>
+
+    </table>
+
+  </div>
+
+
+  <div class="section">
+
+    <h2>📚 비교하면서 공부하기</h2>
+
+    <div class="explain">
+
+      <p>
+        기업을 비교하면 PER, PBR, ROE, 영업이익률,
+        배당수익률 등의 의미를 실제 기업을 통해 공부할 수 있습니다.
+      </p>
+
+      <p>
+        앞으로 4주 주식공부 과정과 연결해서
+        각 지표를 쉽게 설명할 예정입니다.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="notice">
+
+    ⚠️ 현재는 비교 화면의 기본 구조입니다.<br>
+    실제 주가·재무·투자지표 데이터는
+    한국투자증권 Open API 연결 후 표시됩니다.
+
+  </div>
+
+</div>
+
+<footer>
+  🌱 주식투자 뿌리
+</footer>
+
+</body>
+</html>
