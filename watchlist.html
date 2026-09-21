@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>주식투자 뿌리 - 관심종목</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  color: #222;
+}
+
+header {
+  background: #111827;
+  color: white;
+  padding: 25px 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+header p {
+  margin: 8px 0 0;
+  color: #d1d5db;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.add-box {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+  margin-bottom: 25px;
+}
+
+.add-box input {
+  width: 70%;
+  padding: 13px;
+  border: 1px solid #ddd;
+  border-radius: 9px;
+  font-size: 15px;
+}
+
+.add-box button {
+  padding: 13px 18px;
+  border: none;
+  border-radius: 9px;
+  background: #2563eb;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.section-title {
+  margin: 30px 0 15px;
+  font-size: 22px;
+}
+
+.stock-card {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 15px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+}
+
+.stock-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stock-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.stock-code {
+  color: #888;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.placeholder {
+  color: #999;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.delete-btn {
+  margin-top: 15px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 7px;
+  background: #f1f1f1;
+  cursor: pointer;
+}
+
+.notice {
+  background: #fff7ed;
+  border-left: 5px solid #f97316;
+  padding: 18px;
+  border-radius: 10px;
+  line-height: 1.7;
+  margin-top: 30px;
+}
+
+footer {
+  text-align: center;
+  padding: 35px 20px;
+  color: #888;
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .add-box input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .add-box button {
+    width: 100%;
+  }
+
+  .stock-top {
+    align-items: flex-start;
+  }
+
+  .price {
+    font-size: 18px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🌱 주식투자 뿌리</h1>
+  <p>관심있는 종목을 모아 한눈에 확인하세요.</p>
+</header>
+
+<div class="container">
+
+  <a class="back" href="index.html">← 홈으로 돌아가기</a>
+
+  <div class="add-box">
+    <h2>⭐ 관심종목 추가</h2>
+
+    <input
+      type="text"
+      id="stockInput"
+      placeholder="종목명 입력 예: 삼성전자">
+
+    <button onclick="addStock()">관심종목 추가</button>
+  </div>
+
+  <h2 class="section-title">⭐ 내 관심종목</h2>
+
+  <div id="stockList">
+
+    <div class="stock-card">
+      <div class="stock-top">
+        <div>
+          <div class="stock-name">삼성전자</div>
+          <div class="stock-code">005930</div>
+        </div>
+
+        <div class="price">
+          데이터 준비 중
+        </div>
+      </div>
+
+      <div class="placeholder">
+        현재가는 데이터 연결 후 표시됩니다.
+      </div>
+
+      <button class="delete-btn"
+              onclick="this.parentElement.remove()">
+        삭제
+      </button>
+    </div>
+
+  </div>
+
+  <div class="notice">
+    현재 관심종목 화면은 기본 기능과 화면을 먼저 구성한 상태입니다.<br><br>
+
+    이후 주식 데이터 API를 연결하면
+    실시간 또는 최신 주가, 등락률, 거래량 등의 정보를
+    확인할 수 있도록 확장할 예정입니다.
+  </div>
+
+</div>
+
+<footer>
+  🌱 주식투자 뿌리<br>
+  주식 초보자가 기업을 이해하고 스스로 분석할 수 있도록 돕는 공간
+</footer>
+
+<script>
+
+function addStock() {
+
+  const input = document.getElementById("stockInput");
+  const name = input.value.trim();
+
+  if (name === "") {
+    alert("종목명을 입력해주세요.");
+    return;
+  }
+
+  const list = document.getElementById("stockList");
+
+  const card = document.createElement("div");
+
+  card.className = "stock-card";
+
+  card.innerHTML = `
+    <div class="stock-top">
+      <div>
+        <div class="stock-name">${name}</div>
+        <div class="stock-code">종목코드 준비 중</div>
+      </div>
+
+      <div class="price">
+        데이터 준비 중
+      </div>
+    </div>
+
+    <div class="placeholder">
+      주가 데이터는 API 연결 후 표시됩니다.
+    </div>
+
+    <button class="delete-btn"
+            onclick="this.parentElement.remove()">
+      삭제
+    </button>
+  `;
+
+  list.appendChild(card);
+
+  input.value = "";
+}
+
+</script>
+
+</body>
+</html>
