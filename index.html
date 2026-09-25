@@ -468,6 +468,16 @@ footer {
     🌱 주식투자 뿌리<br><br>
     주식을 처음부터 제대로 공부하는 공간
 </footer>
+<script>
+document.getElementById("search-button").addEventListener("click", function() {
+    const stock = document.getElementById("stock-search").value.trim();
 
+    if (stock === "삼성전자") {
+        window.location.href = "company.html";
+    } else {
+        alert("현재는 삼성전자 검색만 지원합니다.");
+    }
+});
+</script>
 </body>
 </html>
